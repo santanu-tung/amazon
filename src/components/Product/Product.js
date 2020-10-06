@@ -12,18 +12,17 @@ const Product = (props) => {
             <Card.Body className="card my-1">
                 <Row>
                     <Col md={4} className="pd-img card">
-                        <img src={img} alt="" />
+                        <img src={img} alt="product" />
 
                     </Col>
                     <Col md={8} className="pd-data">
-
                         <h3>{name}</h3>
                         <p></p>
                         <p> <small> by {seller}</small> </p>
                         <p>Price  -${price}</p>
                         <p> <small> Only {stock} left in stock ordere Soon </small></p>
-                        <button className="btn"> <FontAwesomeIcon icon={faShoppingCart} /> Add to cart</button>
-
+                        <button onClick={() => props.handaleAddproduct(props.product)} className="btn">
+                            <FontAwesomeIcon icon={faShoppingCart} /> Add to cart</button>
                     </Col>
                 </Row>
             </Card.Body>
