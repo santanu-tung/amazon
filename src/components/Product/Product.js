@@ -2,10 +2,13 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Product.css'
 
 const Product = (props) => {
-    const { name, img, price, seller, stock } = props.product
+    const { name, img, price, seller, stock, key } = props.product
+    const showAddTocart = props.showAddTocart
+    console.log(props.product);
 
     return (
         <div className="my-product">
@@ -16,13 +19,17 @@ const Product = (props) => {
 
                     </Col>
                     <Col md={8} className="pd-data">
-                        <h3>{name}</h3>
+                        <h3><Link to={`/product/${key}`}> {name}</Link></h3>
                         <p></p>
                         <p> <small> by {seller}</small> </p>
                         <p>Price  -${price}</p>
                         <p> <small> Only {stock} left in stock ordere Soon </small></p>
+
                         <button onClick={() => props.handaleAddproduct(props.product)} className="btn">
-                            <FontAwesomeIcon icon={faShoppingCart} /> Add to cart</button>
+                            <FontAwesomeIcon icon={faShoppingCart} /> Add to cart
+                            </button>
+
+
                     </Col>
                 </Row>
             </Card.Body>
