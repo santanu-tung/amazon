@@ -8,7 +8,7 @@ import './Product.css'
 const Product = (props) => {
     const { name, img, price, seller, stock, key } = props.product
     const showAddTocart = props.showAddTocart
-    console.log(props.product);
+    console.log(props);
 
     return (
         <div className="my-product">
@@ -24,10 +24,12 @@ const Product = (props) => {
                         <p> <small> by {seller}</small> </p>
                         <p>Price  -${price}</p>
                         <p> <small> Only {stock} left in stock ordere Soon </small></p>
-
-                        <button onClick={() => props.handaleAddproduct(props.product)} className="btn">
-                            <FontAwesomeIcon icon={faShoppingCart} /> Add to cart
+                        {
+                            props.showAddTocart && <button onClick={() => props.handaleAddproduct(props.product)} className="btn my-button">
+                                <FontAwesomeIcon icon={faShoppingCart} /> Add to cart
                             </button>
+                        }
+
 
 
                     </Col>

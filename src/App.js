@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
 import Review from './components/Rivew/Review';
 import Inventory from './components/Inventory/Inventory';
+
 import {
   BrowserRouter as Router,
   Switch,
