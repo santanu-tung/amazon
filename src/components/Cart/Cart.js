@@ -7,7 +7,6 @@ const Cart = (props) => {
 
     const totalPrice = Cart.reduce((total, pd) => total + pd.price * pd.myquentity, 0)
 
-
     let total = 0
     for (let index = 0; index < Cart.length; index++) {
         let pd = Cart[index];
@@ -29,7 +28,7 @@ const Cart = (props) => {
     }
 
     const tax = formatNumber(totalPrice / 10);
-    const grandTotal = formatNumber(totalPrice) + tax
+    const grandTotal = formatNumber(totalPrice) + tax + sippings
 
     return (
         <div className="card p-3">
@@ -40,11 +39,10 @@ const Cart = (props) => {
             <p>Sipping :{sippings}</p>
             <p>Tax :{tax}</p>
             <p>Grand Total :{formatNumber(grandTotal)}</p>
-            <Link to="/review">
-                <button className="btn btn-block my-button">
-                    Review Order
-                </button>
-            </Link>
+            {
+                props.children
+            }
+            
         </div>
     );
 };
