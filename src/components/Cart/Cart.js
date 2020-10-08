@@ -5,7 +5,7 @@ const Cart = (props) => {
     const Cart = props.cart
    // console.log(Cart);
 
-    const totalPrice = Cart.reduce((total, pd) => total + pd.price, 0)
+    const totalPrice = Cart.reduce((total, pd) => total + pd.price * pd.myquentity, 0)
 
 
     let total = 0
@@ -36,7 +36,6 @@ const Cart = (props) => {
             <p>Order Summary</p>
             <p>Items Order {props.cart.length}</p>
             <p> Total Price {formatNumber(totalPrice)}</p>
-            <p>Total Price :{formatNumber(total)}</p>
             <p>Sipping :{sippings}</p>
             <p>Tax :{tax}</p>
             <p>Grand Total :{formatNumber(grandTotal)}</p>

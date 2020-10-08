@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 
 const ReviewItem = (props) => {
-  //  console.log(props);
+    //  console.log(props);
 
 
-    const { name, img, myquentity,key } = props.product
+    const { name, img, myquentity, key, price } = props.product
     return (
 
-        <div className=" my-2" >
+        <div className=" my-2 card p-4" >
             <Row>
 
                 <Col md={4} className="pd-img card">
@@ -20,7 +20,8 @@ const ReviewItem = (props) => {
                     test
                     <h4>{name}</h4>
                     <p>Quentity :{myquentity}</p>
-                        <button onClick={() => { props.removeProduct(key)}} className="btn  inline my-button"> remove Item </button>
+                    <p> <small> price : {price}</small> </p>
+                    <button onClick={() => { props.removeProduct(key) }} className="btn  inline my-button"> remove Item </button>
                 </Col>
             </Row>
         </div>
