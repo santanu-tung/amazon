@@ -36,6 +36,7 @@ const Cart = (props) => {
             <p>Order Summary</p>
             <p>Items Order {props.cart.length}</p>
             <p> Total Price {formatNumber(totalPrice)}</p>
+
             <p>Sipping :{sippings}</p>
             <p>Tax :{tax}</p>
             <p>Grand Total :{formatNumber(grandTotal)}</p>

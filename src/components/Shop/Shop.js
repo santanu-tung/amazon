@@ -12,12 +12,26 @@ const Shop = () => {
     const [cart, setCart] = useState([])
     const handaleAddproduct = (product) => {
         console.log(product);
-        const newCart = [...cart, product]
+
+        const sameProduct = cart.find(pd => pd.key === product.key)  // new code 
+        let count = 1;
+        let newCart
+        if (sameProduct) {
+             count = sameProduct.myquentity + 1
+            sameProduct.myquentity = count
+
+            const other = cart.filter(pd => pd.key !== product.key)
+            newCart = [...other, sameProduct]
+        }else{
+            product.myquentity = 1
+            newCart = [...cart, product]
+        }
+        
         setCart(newCart)
 
         //addToDatabaseCart(product.key, 1)
-        const sameProduct = newCart.filter(pd => pd.key === product.key)
-        const count = sameProduct.length
+        //  const sameProduct = newCart.filter(pd => pd.key === product.key)
+        //   const count = sameProduct.length
         addToDatabaseCart(product.key, count)
 
     }
