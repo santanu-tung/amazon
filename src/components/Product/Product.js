@@ -8,7 +8,7 @@ import './Product.css'
 const Product = (props) => {
     const { name, img, price, seller, stock, key } = props.product
     const showAddTocart = props.showAddTocart
-    console.log(props);
+   // console.log(props);
 
     return (
         <div className="my-product">

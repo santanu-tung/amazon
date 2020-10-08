@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import fakeData from '../../fakeData';
-import { getDatabaseCart } from '../../utilities/databaseManager';
+import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import ReviewItem from '../ReviewItem/ReviewItem';
 
 const Review = () => {
@@ -39,6 +39,17 @@ const Review = () => {
 
     }, [])
 
+    const removeProduct = (productkey)=>{
+        console.log('remove');
+
+        const newCart = cart.filter(product =>  product.key !== productkey )
+        setCart(newCart)
+
+        
+        removeFromDatabaseCart(productkey)
+        
+    }
+
     return (
         <div>
 
@@ -47,7 +58,7 @@ const Review = () => {
                 <Row>
                     <Col md={8} className="">
                         <h2>cart length :{cart.length}</h2>
-                        {cart.map(pd => <ReviewItem key={pd.key} product={pd}></ReviewItem>)}
+                        {cart.map(pd => <ReviewItem key={pd.key} product={pd} removeProduct={removeProduct}></ReviewItem>)}
                     </Col>
                     <Col md={4} className="">
 
