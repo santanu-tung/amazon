@@ -17,7 +17,6 @@ const ReviewItem = (props) => {
                     <img src={img} alt="product" />
                 </Col>
                 <Col md={8} className="pd-data">
-                    test
                     <h4>{name}</h4>
                     <p>Quentity :{myquentity}</p>
                     <p> <small> price : {price}</small> </p>

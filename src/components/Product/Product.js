@@ -16,7 +16,6 @@ const Product = (props) => {
                 <Row>
                     <Col md={4} className="pd-img card">
                         <img src={img} alt="product" />
-
                     </Col>
                     <Col md={8} className="pd-data">
                         <h3><Link to={`/product/${key}`}> {name}</Link></h3>
@@ -29,9 +28,6 @@ const Product = (props) => {
                                 <FontAwesomeIcon icon={faShoppingCart} /> Add to cart
                             </button>
                         }
-
-
-
                     </Col>
                 </Row>
             </Card.Body>
