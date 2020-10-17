@@ -18,6 +18,7 @@ const Login = () => {
 
     let { from } = location.state || { from: { pathname: "/" } };
     const [user, setUser] = useState({
+
         isSignedIn: false,
         name: '',
         email: '',
@@ -211,7 +212,7 @@ const Login = () => {
                 {
                     user.isSignedIn ? <button onClick={handleSignout} className="my-btn mr-5">Sign out</button> : <button onClick={handleSignin} className="my-btn mr-5">Sign in by Gmail</button>
                 }
-                {/* <button onClick={handleFbSignIn}> Sigin by facebook</button> */}  
+             {/* <button onClick={handleFbSignIn}> Sigin by facebook</button> */}  
 
                 {
                     user.isSignedIn &&

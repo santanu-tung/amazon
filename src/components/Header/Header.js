@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import logo from '../../images/logo.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,11 +9,12 @@ import {
 	Route,
 	Link
 } from "react-router-dom";
-
+import { UserContext } from '../../App';
 
 
 const Header = () => {
 
+	const [loginUser, SetLoginUser] = useContext(UserContext);
 	return (
 		<header>
 			<Container>
@@ -28,14 +29,16 @@ const Header = () => {
 
 			<nav className="main-nav">
 
-
 				<Link to="/shop">shop</Link>
 				<Link to='/review'>review</Link>
 				<Link to='/inventory'>manage inventory</Link>
-				
-				<Link to='/login'>Login</Link>
-				
-				
+
+
+				{
+					loginUser.email ? <button onClick={() => SetLoginUser({})}>sign out </button> : <Link to='/login'>sign in</Link>
+
+				}
+
 				{/*
 				
 				<a href="/shop">shop</a>
