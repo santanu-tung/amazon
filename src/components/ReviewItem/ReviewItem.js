@@ -1,0 +1,30 @@
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+
+const ReviewItem = (props) => {
+    //  console.log(props);
+
+
+    const { name, img, myquentity, key, price } = props.product
+    return (
+
+        <div className=" my-2 card p-4" >
+            <Row>
+
+                <Col md={4} className="pd-img card">
+                    <img src={img} alt="product" />
+                </Col>
+                <Col md={8} className="pd-data">
+                    <h4>{name}</h4>
+                    <p>Quentity :{myquentity}</p>
+                    <p> <small> price : {price}</small> </p>
+                    <button onClick={() => { props.removeProduct(key) }} className="btn  inline my-button"> remove Item </button>
+                </Col>
+            </Row>
+        </div>
+    );
+};
+
+export default ReviewItem;
