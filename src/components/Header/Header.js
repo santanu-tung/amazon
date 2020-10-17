@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 
 
+
 const Header = () => {
 
 	return (
@@ -31,6 +32,10 @@ const Header = () => {
 				<Link to="/shop">shop</Link>
 				<Link to='/review'>review</Link>
 				<Link to='/inventory'>manage inventory</Link>
+				
+				<Link to='/login'>Login</Link>
+				
+				
 				{/*
 				
 				<a href="/shop">shop</a>

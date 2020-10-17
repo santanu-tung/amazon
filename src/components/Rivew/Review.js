@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import fakeData from '../../fakeData';
 import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
@@ -12,6 +12,8 @@ const Review = () => {
 
     const [cart, setCart] = useState([])
     const [orderPlace, setOrderPlace] = useState(false)
+    const history = useHistory()
+  
 
     useEffect(() => {
         const savedCart = getDatabaseCart()
@@ -44,11 +46,11 @@ const Review = () => {
 
     }
 
-    const placeOrder = () => {
-        setCart([])
-        setOrderPlace(true)
-        processOrder()
+    const placeCheckout = () => {
+        history.push('/shipment')
 
+        //history.push('/shipment')
+       
 
     }
     let happyOrder
@@ -74,8 +76,8 @@ const Review = () => {
                     <Col md={4} className="my-3">
                         <Cart cart={cart}>
 
-                            <button onClick={placeOrder} className="btn btn-block my-button">
-                                Place Order
+                            <button onClick={placeCheckout} className="btn btn-block my-button">
+                                prosed checkout 
                             </button>
 
                         </Cart>

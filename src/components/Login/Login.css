@@ -1,0 +1,17 @@
+button.my-btn {
+    padding: 10px 20px;
+    margin-top: 46px;
+    background: #f59963;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+}
+
+.my-img {
+    widows: 200px;
+}
+
+.mt-100 {
+    margin-top: 100px
+}
