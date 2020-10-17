@@ -31,10 +31,12 @@ const Header = () => {
 				<Link to="/shop">shop</Link>
 				<Link to='/review'>review</Link>
 				<Link to='/inventory'>manage inventory</Link>
+				{/*
 				
 				<a href="/shop">shop</a>
 				<a href="/review">review</a>
 				<a href="/inventory">manage inventory</a>
+				 */}
 			</nav>
 		</header>
 	);
